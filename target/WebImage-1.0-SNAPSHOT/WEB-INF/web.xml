@@ -30,7 +30,7 @@
         </init-param>
         <init-param>
             <param-name>uploadDirectory</param-name>
-            <param-value>/Users/Garces/NetBeansProjects/WebImage/src/main/webapp</param-value>
+            <param-value>/Users/Garces/NetBeansProjects/WebImage/src/main/webapp/resources</param-value>
         </init-param>
     </filter>
     

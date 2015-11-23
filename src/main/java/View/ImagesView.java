@@ -36,7 +36,7 @@ public class ImagesView {
                 pos = listOfFile.getPath().lastIndexOf('/');
                 name = listOfFile.getPath().substring(++pos, listOfFile.getPath().length());
                 if(!name.startsWith("."))
-                    images.add(name);
+                    images.add(Session.USERNAME + "/" + name);
             }
         }
     }

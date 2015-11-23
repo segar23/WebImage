@@ -27,13 +27,6 @@ import org.primefaces.model.UploadedFile;
 public class Picture {
     private UploadedFile file;
 
-    public Picture() 
-    {
-        System.out.println("Constructor");
-    }
-    
-    
- 
     public UploadedFile getFile() {
         return file;
     }
@@ -42,7 +35,6 @@ public class Picture {
         this.file = file;
     }
      
-    @SuppressWarnings({"ConvertToTryWithResources", "CallToPrintStackTrace"})
     public void handleFileUpload(FileUploadEvent event) {
         try
         {            
@@ -65,8 +57,8 @@ public class Picture {
             FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
             FacesContext.getCurrentInstance().addMessage(null, message);
             
-            MongoDatabase mongo = new MongoDatabase();
-            mongo.insertPicture(pictureName, Session.USERNAME);
+            //MongoDatabase mongo = new MongoDatabase();
+            //mongo.insertPicture(pictureName, Session.USERNAME);
         }
         catch (IOException e)
         {
