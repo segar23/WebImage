@@ -33,7 +33,7 @@ public class MongoDatabase
     public void insertUser(String username, String password)
     {
         List<String> images = new ArrayList<>();
-        DBObject user = new BasicDBObject("username", username)
+        DBObject user = new BasicDBObject("_id", username)
                 .append("password", password)
                 .append("images", images);
         
