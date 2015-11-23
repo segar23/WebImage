@@ -1,5 +1,8 @@
-backgroud/Picture.class
-model/MenuLogin.class
-model/ImagesView.class
-backgroud/User.class
-model/Login.class
+View/Login.class
+View/ImagesView.class
+View/MenuLogin.class
+Controller/Picture.class
+View/DFView.class
+Controller/Session.class
+Model/User.class
+Controller/MongoDatabase.class

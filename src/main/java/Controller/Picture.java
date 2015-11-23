@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Controller;
 
 import Controller.Session;
 import java.io.File;
@@ -48,8 +48,9 @@ public class Picture {
         {            
             File targetFolder = new File("/Users/Garces/NetBeansProjects/WebImage/src/main/webapp/resources/" + Session.USERNAME);
             InputStream inputStream = event.getFile().getInputstream();
+            String pictureName = event.getFile().getFileName();
             OutputStream out = new FileOutputStream(new File(targetFolder,
-                event.getFile().getFileName()));
+                pictureName));
             int read;
             byte[] bytes = new byte[1024];
             
@@ -63,6 +64,9 @@ public class Picture {
             
             FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
             FacesContext.getCurrentInstance().addMessage(null, message);
+            
+            MongoDatabase mongo = new MongoDatabase();
+            mongo.insertPicture(pictureName, Session.USERNAME);
         }
         catch (IOException e)
         {

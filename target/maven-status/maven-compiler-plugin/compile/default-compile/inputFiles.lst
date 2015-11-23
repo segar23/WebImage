@@ -1,7 +1,8 @@
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/model/MenuLogin.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/backgroud/Picture.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/model/Login.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/backgroud/PhotoStreamer.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/model/ImagesView.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/backgroud/User.java
-/Users/Garces/NetBeansProjects/WebImage/src/main/java/backgroud/Photo.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/View/DFView.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/Controller/Session.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/View/ImagesView.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/View/Login.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/View/MenuLogin.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/Model/User.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/Controller/Picture.java
+/Users/Garces/NetBeansProjects/WebImage/src/main/java/Controller/MongoDatabase.java

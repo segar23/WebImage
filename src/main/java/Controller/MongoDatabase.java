@@ -12,6 +12,8 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -30,9 +32,10 @@ public class MongoDatabase
     
     public void insertUser(String username, String password)
     {
+        List<String> images = new ArrayList<>();
         DBObject user = new BasicDBObject("username", username)
                 .append("password", password)
-                .append("images", "");
+                .append("images", images);
         
         collection.insert(user);
     }
@@ -43,6 +46,14 @@ public class MongoDatabase
         DBCursor cursor = collection.find(query);
         String bdPass = (String)cursor.next().get("password");
         return password.equals(bdPass);
+    }
+    
+    public void insertPicture (String pictureName, String username)
+    {
+        BasicDBObject findQuery = new BasicDBObject("username", username);
+        BasicDBObject innerUpdate = new BasicDBObject("images", new BasicDBObject("name", pictureName));
+        BasicDBObject updateQuery = new BasicDBObject("$push",innerUpdate);
+        collection.update(findQuery, updateQuery);
     }
     
     
