@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Web Image</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="false" closable="false" collapsible="false">
+                    <center><h1>Library</h1></center>
+                </p:layoutUnit>
+                
+                <p:layoutUnit position="west" resizable="false" size="250">
+                <h:form>  
+                <p:growl id="messages" showDetail="false"/>
+                <p:menu>
+                    <p:submenu label="User">
+                        <p:menuitem value="Upload" actionListener="#{menuLogin.save}" update="messages" icon="ui-icon-disk" />
+                        <p:menuitem value="Sign Out" actionListener="#{menuLogin.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+                    </p:submenu>
+                </p:menu>
+                </h:form>
+                </p:layoutUnit>
+                
+                <p:layoutUnit position="center">
+                    <h:form>
+                    <center>
+                    <p:galleria value="#{imagesView.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">
+                        <p:graphicImage name="#{image}" title="#{image}" style="max-width: 500px"/>
+                    </p:galleria>
+                    </center>
+                    
+                        <p:fileUpload label="Upload" fileUploadListener="#{picture.handleFileUpload}" mode="advanced"
+                                         update="messages" auto="true" 
+                                         sizeLimit="1000000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                                         oncomplete="window.setTimeout(function(){location.reload()},3000);"/>
+
+                        <p:growl id="messages" showDetail="true" />
+                    </h:form>
+                   
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
